@@ -1,5 +1,6 @@
 //1. Создайте структуру Student с полями name, age и grade.
 //- Создайте объект student1 структуры Student и присвойте ему значения name = "Иван Иванов", age = 18 и grade = 4.5.
+//-Выведите на экран информацию об student1.
 
 #include <iostream>
 using namespace std;
@@ -19,6 +20,10 @@ int main()
 	student1.name = "Иван Иванов";
 	student1.age = 18;
 	student1.grade = 4.5;
+
+	cout << student1.name << endl;
+	cout << student1.age << endl;
+	cout << student1.grade << endl;
 
 	return 0;
 }
