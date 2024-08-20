@@ -1,0 +1,47 @@
+//3. Создайте структуру Book с полями title, author и year.
+//- Создайте массив из 5 объектов структуры Book.
+//- Заполните массив данными о книгах.
+//- Выведите на экран информацию о всех книгах из массива.
+
+#include <iostream>
+using namespace std;
+
+struct Book
+{
+	string title;
+	string author;
+	int year = 0;
+};
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	Book arr[5];
+	cout << "Заполните информацию о своей библиотеке: " << endl;
+	for (int i = 0; i < 5; i++)
+	{
+		cout << "-------------------------------------------------------------" << endl;
+		cout << "Введите название " << i + 1 << " книги: " << endl;
+		cin >> arr[i].title;
+		cout << "Введите автора " << i + 1 << " книги: " << endl;
+		cin >> arr[i].author;
+		cout << "Введите год " << i + 1 << " книги: " << endl;
+		cin >> arr[i].year;
+		cout << "-------------------------------------------------------------" << endl << endl;
+	}
+
+	cout << "Информацию о какой книге вы желаете получить? Введите номер: ";
+	int j = 0;
+	cin >> j;
+	for (int i = 0; i < 5; i++)
+	{
+		if (j == (i + 1))
+		{
+			cout << "Информация о вашей книге:" << endl;
+			cout << "Название: " << arr[i].title << endl;
+			cout << "Автор: " << arr[i].author << endl;
+			cout << "Год: " << arr[i].year << endl;
+		}
+	}
+	return 0;
+}
