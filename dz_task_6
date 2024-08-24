@@ -1,0 +1,139 @@
+//6. Создайте структуру Time с полями hour, minute и second.
+//- Создайте функцию addTime(), которая принимает два объекта структуры Time
+//в качестве аргументов и возвращает новый объект Time, представляющий собой сумму двух времен.
+//- Создайте функцию subtractTime(), которая принимает два объекта структуры Time в качестве аргументов
+//и возвращает новый объект Time, представляющий собой разность двух времен.
+//- Создайте два объекта структуры Time и выведите на экран сумму и разность времен, используя функции
+//addTime() и subtractTime().
+
+#include <iostream>
+using namespace std;
+
+struct Time
+{
+	int hour;
+	int minute;
+	int second;
+};
+
+Time addTime(Time var1, Time var2)
+{
+	Time temp =
+	{
+		0,
+		0,
+		0
+	};
+	if (var1.hour < 0 || var1.minute < 0 || var1.second < 0 || var2.hour < 0 || var2.minute < 0 || var2.second < 0)
+	{
+		cout << "ERROR ERROR ERROR" << endl;
+		return temp;
+	}
+	int full_hours = var1.hour + var2.hour;
+	int full_minutes = var1.minute + var2.minute;
+	while (full_minutes > 59)
+	{
+		full_hours += 1;
+		full_minutes = full_minutes % 60;
+	}
+	int full_seconds = var1.second + var2.second;
+	while (full_seconds > 59)
+	{
+		full_minutes += 1;
+		full_seconds = full_seconds % 60;
+	}
+
+	temp =
+	{
+		full_hours,
+		full_minutes,
+		full_seconds
+	};
+
+	return temp;
+}
+
+Time subtractTime(Time var1, Time var2)
+{
+	Time temp =
+	{
+		0,
+		0,
+		0
+	};
+	if (var1.hour < 0 || var1.minute < 0 || var1.second < 0 || var2.hour < 0 || var2.minute < 0 || var2.second < 0)
+	{
+		cout << "ERROR ERROR ERROR" << endl;
+		return temp;
+	}
+
+
+	int full_hours = var1.hour - var2.hour;
+	int full_minutes = var1.minute - var2.minute;
+
+	int full_seconds = var1.second - var2.second;
+	while (full_seconds < 0)
+	{
+		full_minutes -= 1;
+		full_seconds += 60;
+	}
+	while (full_minutes < 0)
+	{
+		full_hours -= 1;
+		full_minutes += 60;
+	}
+	while (full_hours < 0)
+	{
+		full_hours += 1;
+		full_minutes -= 60;
+	}
+	
+	temp =
+	{
+		full_hours,
+		full_minutes,
+		full_seconds
+	};
+	return temp;
+}
+
+int main()
+{
+	Time value_1 =
+	{
+		1,
+		0,
+		0
+	};
+	Time value_2 =
+	{
+		1,
+		45,
+		10
+	};
+	Time value_3
+	{
+		0,
+		0,
+		70
+	};
+
+	Time final_value = addTime(value_1, value_2);
+	cout << "---------------------------" << endl;
+	cout << "Information: " << endl;
+	cout << "Hours: " << final_value.hour << endl;
+	cout << "Minutes: " << final_value.minute << endl;
+	cout << "Seconds: " << final_value.second << endl;
+	cout << "---------------------------" << endl << endl;
+
+
+	Time final_value_2 = subtractTime(value_1, value_3);
+	cout << "---------------------------" << endl;
+	cout << "Information: " << endl;
+	cout << "Hours: " << final_value_2.hour << endl;
+	cout << "Minutes: " << final_value_2.minute << endl;
+	cout << "Seconds: " << final_value_2.second << endl;
+	cout << "---------------------------" << endl << endl;
+
+	return 0;
+}
