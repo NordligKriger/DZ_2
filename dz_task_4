@@ -1,0 +1,120 @@
+//4. Создайте структуру Employee с полями name, salary, department и position.
+//- Создайте функцию printEmployeeInfo(), которая принимает объект структуры Employee
+//в качестве аргумента и выводит на экран информацию о нем.
+//- Создайте массив из 10 объектов структуры Employee.
+//- Заполните массив данными о сотрудниках.
+//- Выведите на экран информацию о всех сотрудниках, используя функцию printEmployeeInfo().
+
+#include <iostream>
+using namespace std;
+
+struct Employee
+{
+	string name;
+	double salary;
+	string department;
+	string position;
+};
+
+void printEmployeeInfo(Employee obj)
+{
+	cout << "------------------------------" << endl;
+	cout << "Name: " << obj.name << endl;
+	cout << "Salary: " << obj.salary << endl;
+	cout << "Department: " << obj.department << endl;
+	cout << "Position: " << obj.position << endl;
+	cout << "------------------------------" << endl << endl;
+}
+
+
+int main()
+{
+	Employee staff[10];
+	staff[0] =
+	{
+		"Ivan",
+		100000,
+		"Finance",
+		"boss"
+	};
+
+	staff[1] =
+	{
+		"Peter",
+		500,
+		"Finance",
+		"employee"
+	};
+
+	staff[2] =
+	{
+		"Andrey",
+		15000,
+		"Finance",
+		"programmer"
+	};
+
+	staff[3] =
+	{
+		"Sergey",
+		10000,
+		"Finance",
+		"senior employee"
+	};
+
+	staff[4] =
+	{
+		"Omar",
+		70000,
+		"Finance",
+		"deputy chief"
+	};
+
+	staff[5] =
+	{
+		"Ivan",
+		100000,
+		"Finance",
+		"boss"
+	};
+
+	staff[6] =
+	{
+		"Alexey",
+		600,
+		"Finance",
+		"employee"
+	};
+
+	staff[7] =
+	{
+		"Stevan",
+		600,
+		"Finance",
+		"employee"
+	};
+
+	staff[8] =
+	{
+		"Gleb",
+		20000,
+		"Finance",
+		"engineer"
+	};
+
+	staff[9] =
+	{
+		"Egor",
+		20000,
+		"Finance",
+		"senior programmer"
+	};
+
+	cout << "Information about all persons in company:" << endl;
+	for (int i = 0; i < 10; i++)
+	{
+		printEmployeeInfo(staff[i]);
+	}
+
+	return 0;
+}
