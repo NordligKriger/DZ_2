@@ -1,0 +1,42 @@
+//5. Создайте структуру Rectangle с полями width и height.
+//- Создайте функцию calculateArea(), которая принимает объект структуры Rectangle
+//в качестве аргумента и возвращает площадь прямоугольника.
+//- Создайте функцию calculatePerimeter(), которая принимает объект структуры Rectangle
+//в качестве аргумента и возвращает периметр прямоугольника.
+//- Создайте объект структуры Rectangle и выведите на экран его площадь и периметр,
+//используя функции calculateArea() и calculatePerimeter().
+
+#include <iostream>
+using namespace std;
+
+struct Rectangle
+{
+	double width;
+	double height;
+};
+
+double calculateArea(Rectangle val)
+{
+	double area = val.width * val.height;
+	return area;
+}
+
+double calculatePerimeter(Rectangle val)
+{
+	double perimeter = val.width * 2 + val.height * 2;
+	return perimeter;
+}
+
+int main()
+{
+	Rectangle object1 =
+	{
+		2.0,
+		5.0
+	};
+
+	cout << "Area for object1: " << calculateArea(object1) << endl;
+	cout << "Perimeter for object1: " << calculatePerimeter(object1) << endl;
+
+	return 0;
+}
