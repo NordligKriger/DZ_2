@@ -1,0 +1,48 @@
+//7. Создайте структуру Car с полями model, year и price.
+//- Создайте функцию createCar(), которая принимает в качестве аргументов модель, год и цену,
+//выделяет память для нового объекта структуры Car и инициализирует его данными.
+//- Создайте функцию printCar(), которая принимает указатель на структуру Car и выводит на экран информацию о машине.
+//- Создайте два объекта структуры Car, используя функцию createCar(), и выведите на экран информацию о машинах, используя
+//функцию printCar().
+
+#include <iostream>
+using namespace std;
+
+struct Car
+{
+	string model;
+	int year;
+	long long price;
+};
+
+Car createCar(string mod, int yr, double pr)
+{
+	Car temp =
+	{
+		mod,
+		yr,
+		pr
+	};
+	return temp;
+}
+
+void printCar(Car* val)
+{
+	cout << "---------------------------" << endl;
+	cout << "Information: " << endl;
+	cout << "Model: " << val->model << endl;
+	cout << "Year: " << val->year << endl;
+	cout << "Price: " << val->price << endl;
+	cout << "---------------------------" << endl << endl;
+}
+
+int main()
+{
+	Car car_1 = createCar("Lada", 2010, 100000);
+	Car car_2 = createCar("Lamborgini", 2024, 9000000000000000000);
+
+	printCar(&car_1);
+	printCar(&car_2);
+
+	return 0;
+}
