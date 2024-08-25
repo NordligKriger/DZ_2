@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+struct Point
+{
+	float x;
+	float y;
+};
+
+struct Circle
+{
+	double radius;
+	Point center;
+};
+
+double calculateArea(Circle* val_1)
+{
+	double area = acos(0) * 2 * val_1->radius * val_1->radius;
+	return area;
+}
+
+double calculatePerimeter(Circle* val_1)
+{
+	double per = 2 * acos(0) * 2 * val_1->radius;
+	return per;
+}
+
+int main()
+{
+	Circle shape_1 =
+	{
+		3.0,
+		{
+			0,
+			0
+		}
+	};
+	cout << "Information: " << endl;
+	cout << "Area: " << calculateArea(&shape_1) << endl;
+	cout << "Perimeter: " << calculatePerimeter(&shape_1) << endl;
+
+	return 0;
+}
